@@ -1,0 +1,19 @@
+.home-view {
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    width: 50%;
+    h2 {
+        font-family: "Lemonada", cursive;
+        font-size: 35px;
+        margin-bottom: 50px;
+        color: $white;
+        text-align: center;
+    }
+    .all-events {
+        padding: 20px 0;
+        margin-left: 5vw;
+        color: $smokywhite;
+        border-radius: 5px;
+    }
+}

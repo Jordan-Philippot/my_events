@@ -1,0 +1,46 @@
+.header-view {
+    .user-icon {
+        position: absolute;
+        top: 3%;
+        right: 7%;
+        width: 70px;
+        height: 70px;
+        color: $whitesmoke;
+        padding: 10px;
+        border: 2px solid $darkgrey;
+        border-radius: 50%;
+        &:hover {
+            color: $darkgrey;
+            border: 2px solid $whitesmoke;
+            width: 75px;
+            height: 75px;
+            transition: 0.5s;
+        }
+    }
+    .logo {
+        position: relative;
+        width: 80px;
+        border-radius: 50%;
+        transform: rotate(-50deg);
+        margin-top: 30px;
+        margin-left: 30px;
+        h1 {
+            font-size: 15px;
+            color: $whitesmoke;
+            span {
+                font-family: "Lemonada", cursive;
+                height: 70px;
+                position: absolute;
+                width: 20px;
+                left: 0%;
+                top: 0%;
+                transform-origin: bottom center;
+            }
+            @for $i from 1 through 9 {
+                .char#{$i} {
+                    transform: (rotate(($i * 10.5) + deg));
+                }
+            }
+        }
+    }
+}
