@@ -3,11 +3,11 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class EventsController extends AbstractController
+class CategoriesController extends AbstractController
 {
     private $client;
     private $apiUrl = "https://api.eventful.com/json/";
@@ -18,14 +18,13 @@ class EventsController extends AbstractController
     }
 
     /**
-     * @Route("/events", name="events")
+     * @Route("/categories", name="categories")
      */
     public function index()
     {
-
         $response = $this->client->request(
             'GET',
-            $this->apiUrl . '/events/search?app_key=' . $_ENV['API_KEY'] . '&location=Lyon'
+            $this->apiUrl . 'categories/list/search?app_key=' . $_ENV['API_KEY'] . ''
         );
 
         $statusCode = $response->getStatusCode();

@@ -1,0 +1,43 @@
+.event-view {
+    width: 90%;
+    margin-left: 5%;
+    background-color: $lightergrey;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    display: flex;
+    .image-container {
+        width: 50%;
+        .defaultEvent-image {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    }
+    .describ-container {
+        position: relative;
+        width: 50%;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        .title-event {
+            color: $dark;
+            margin: 40px 10px 30px 10px;
+            font-size: 30px;
+            letter-spacing: -0.7px;
+        }
+        .city-event{
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: $smokywhite;
+            background-color: $darkengrey;
+            padding: 13px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    }
+}
