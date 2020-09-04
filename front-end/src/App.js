@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Menu from "./components/Menu";
 import OneEvent from "./components/OneEvent";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -12,7 +11,7 @@ export default function App() {
     <Router>
       <div className="App">
         <Header />
-        <Menu />
+        {/* <Menu /> */}
         <Switch>
           <Route exact path="/">
             <Home />

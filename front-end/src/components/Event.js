@@ -11,13 +11,13 @@ export default function Event(props) {
     return (
         <div className="event-view" onClick={() => event(props.event.id)}>
             <div className="image-container" >
-                {(() => {
+                {/* {(() => {
                     if (props.event.image != null) {
                         return <img src={props.event.image} alt="" />
                     } else {
                         return <img className="defaultEvent-image" src={EventDefault} alt="" />
                     }
-                })()}
+                })()} */}
             </div>
             <div className="describ-container">
                 <div className="title-event">{props.event.title}</div>

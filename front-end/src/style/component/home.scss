@@ -1,8 +1,8 @@
 .home-view {
     position: absolute;
     top: 18%;
-    left: 25%;
-    width: 50%;
+    left: 0;
+    width: 80%;
     h2 {
         font-family: "Lemonada", cursive;
         font-size: 35px;
@@ -12,8 +12,46 @@
     }
     .all-events {
         padding: 20px 0;
-        margin-left: 5vw;
+        margin-left: 25vw;
         color: $smokywhite;
         border-radius: 5px;
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 1025px) {
+    .home-view {
+        position: absolute;
+        top: 18%;
+        left: 0;
+        width: 100%;
+        .all-events {
+            padding: 20px 0;
+            margin-left: 15vw;
+            margin-top: 43vh;
+            color: $smokywhite;
+            border-radius: 5px;
+            width: 70%;
+        }
+        h2 {
+            position: absolute;
+            top: 28vh;
+            left: 25%;
+            font-family: "Lemonada", cursive;
+            font-size: 35px;
+            margin-bottom: 80px;
+            margin-top: 50px;
+            color: $white;
+            text-align: center;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .home-view {
+        width: 100%;
+        left: 0;
+        h2 {
+            margin-left: 0%;
+        }
     }
 }

@@ -86,25 +86,19 @@
 
 @media screen and (min-width: 451px) and (max-width: 1025px) {
     .menu-view {
-        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        float: left;
+        margin-top: 0vh;
+        padding: 30px;
         width: 50%;
         margin-left: 25%;
     }
 }
 @media screen and (max-width: 450px) {
     .menu-view {
-        flex-direction: column;
-        margin-top: 10vh;
+        margin-top: 0vh;
         width: 100%;
-        select {
-            width: 100%;
-        }
-        input {
-            width: 100%;
-        }
-        button {
-            margin-left: 50%;
-            width: 50%;
-        }
+        margin-left: 0%;
     }
 }
