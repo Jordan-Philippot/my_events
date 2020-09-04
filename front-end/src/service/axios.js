@@ -18,6 +18,15 @@ export async function getOneEvent(setOneEvent, id) {
     setOneEvent(OneEvent.data, id);
 }
 
+
+export async function getSearch(setSearch, place, select) {
+    const search = await axios.get('http://localhost:8000/search/' + place + '/' + select, {
+        method: 'GET',
+        mode: 'no-cors'
+    })
+    setSearch(search.data.events.event)
+}
+
 export function registerOrConnect(response) {
     axios({
         method: 'POST',

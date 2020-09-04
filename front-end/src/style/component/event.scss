@@ -29,7 +29,7 @@
             font-size: 30px;
             letter-spacing: -0.7px;
         }
-        .city-event{
+        .city-event {
             position: absolute;
             top: 0;
             right: 0;
@@ -38,6 +38,62 @@
             padding: 13px;
             border-top-right-radius: 10px;
             border-bottom-left-radius: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 1025px) {
+    .event-view {
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 50px;
+        flex-direction: column;
+        .image-container {
+            width: 100%;
+            .defaultEvent-image {
+                width: 100%;
+                height: auto;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 10px;
+            }
+        }
+        .describ-container {
+            position: relative;
+            width: 100%;
+            .title-event {
+                margin: 60px 20px 50px 20px;
+            }
+            .city-event {
+                border-top-right-radius: 0px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .event-view {
+        width: 120%;
+        margin-left: -15%;
+        flex-direction: column;
+        .image-container {
+            width: 100%;
+            .defaultEvent-image {
+                width: 100%;
+                height: auto;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 0px;
+            }
+        }
+        .describ-container {
+            width: 100%;
+            .title-event {
+                margin: 60px 20px 50px 20px;
+                font-size: 20px;
+            }
+            .city-event {
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 10px;
+            }
         }
     }
 }
