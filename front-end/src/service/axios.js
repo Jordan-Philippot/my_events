@@ -14,9 +14,10 @@ export async function getOneEvent(setOneEvent, id) {
     const OneEvent = await axios('http://localhost:8000/event/' + id, {
         method: 'GET',
         mode: 'no-cors'
-    })
+    });
     setOneEvent(OneEvent.data, id);
 }
+
 
 export async function getSearch(setSearch, place, select) {
     const search = await axios.get('http://localhost:8000/search/' + place + '/' + select, {
@@ -24,4 +25,14 @@ export async function getSearch(setSearch, place, select) {
         mode: 'no-cors'
     })
     setSearch(search.data.events.event)
+}
+
+export function registerOrConnect(response) {
+    axios({
+        method: 'POST',
+        data: response,
+        url: '/user',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors'
+    })
 }

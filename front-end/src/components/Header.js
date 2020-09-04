@@ -1,9 +1,11 @@
 import React from "react";
+import Facebook from "./Facebook";
 
 export default function Header() {
 
     return (
         <div className="header-view">
+            <Facebook/>
             <div className="logo">
                 <h1>
                     <span className="char1">M</span>
