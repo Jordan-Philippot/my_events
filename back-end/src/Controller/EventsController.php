@@ -28,7 +28,7 @@ class EventsController extends AbstractController
             $this->apiUrl . '/events/search?app_key=' . $_ENV['API_KEY'] . '&location=Lyon'
         );
 
-        $statusCode = $response->getStatusCode();
+//        $statusCode = $response->getStatusCode();
         $content = $response->getContent();
 
         $response = new Response($content);
