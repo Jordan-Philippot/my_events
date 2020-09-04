@@ -40,12 +40,8 @@ export default function Menu() {
             </div>
 
             <input type="text" placeholder="Lieu" value={place} onChange={(e) => setPlace(e.target.value)} />
-
-            <button onClick={handleSearch}><Link to={{
-                pathname: '/',
-                search: '?query=abc',
-                state: { detail: search.data.events.event }
-            }}> My Link </Link>Filtrer</button>
+           <button onClick={handleSearch}>
+               Filtrer</button>
             {/* {search && search.map(searc => (
                 <Event key={searc.id} searc={searc} />
             ))} */}
