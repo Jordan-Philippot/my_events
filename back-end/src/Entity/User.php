@@ -18,7 +18,7 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $facebookId;
 
@@ -98,7 +98,7 @@ class User
     /**
      * @return mixed
      */
-    public function getFacebookId()
+    public function getFacebookId(): string
     {
         return $this->facebookId;
     }

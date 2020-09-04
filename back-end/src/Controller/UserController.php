@@ -21,6 +21,7 @@ class UserController extends AbstractController {
     public function registerOrConnect(Request $request) {
         $postData = json_decode($request->getContent(), true);
 //        die();
+
         $repository = $this->getDoctrine()->getRepository(User::class);
 
         $user = $repository->findOneBy(['facebookId' => $postData["userID"]]);
@@ -35,7 +36,9 @@ class UserController extends AbstractController {
             $user->setFacebookId($postData["userID"]);
 
             $entityManager->persist($user);
-
+//            $response = new Response(json_encode(var_dump($user)));
+//            $response->headers->set('Content-Type', 'application/json');
+//            return $response;
             $entityManager->flush();
 
         }
