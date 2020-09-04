@@ -14,7 +14,7 @@ class UserController extends AbstractController {
 
 
     /**
-     * @Route("/user", methods={"POST"}, name="events")
+     * @Route("/user", methods={"POST"}, name="user")
      * @param Request $request
      * @return Response
      */
