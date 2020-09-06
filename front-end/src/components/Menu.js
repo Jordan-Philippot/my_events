@@ -10,18 +10,23 @@ export default function Menu() {
     useEffect(() => {
         getCategories(setCategories)
     }, []);
-
-    useEffect(() => {
-        setPlace(place)
-    }, [place]);
-
-    useEffect(() => {
-        setSelect(select)
-    }, [select]);
+    //
+    // useEffect(() => {
+    //     setPlace(place)
+    // }, [place]);
+    //
+    // useEffect(() => {
+    //     setSelect(select)
+    // }, [select]);
+const handleSelect = (e) => {
+        setSelect(e.target.value);
+    // console.log(select,"select 11",e.target.value );
+};
 
     const handleSearch = (e) => {
         e.preventDefault();
-        getSearch(setSearch, place, select)
+        console.log(place, "select");
+        getSearch(setSearch, place , select)
     };
     console.log(search)
     return (
@@ -29,9 +34,9 @@ export default function Menu() {
 
             <div className="select">
                 <select name="category" id="category" value={select}
-                    onChange={(e) => setSelect(e.target.value)}>
+                    onChange={handleSelect}>
                     {categories && categories.map(categorie => (
-                        <option categorie={categorie} key={categorie.id} value={categorie.id}>{categorie.id}</option>
+                        <option key={categorie.id} value={categorie.id}>{categorie.id}</option>
                     ))}
                 </select>
             </div>

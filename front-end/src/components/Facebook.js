@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import FacebookLogin from 'react-facebook-login';
 import { Card, Image } from 'react-bootstrap';
 import { registerOrConnect } from "../service/axios";
@@ -9,6 +9,19 @@ function Facebook() {
     const [data, setData] = useState({});
     const [picture, setPicture] = useState('');
 
+
+    useEffect(() => {
+        const name = localStorage.getItem('userName');
+        const picture = localStorage.getItem('userPicture');
+        const email = localStorage.getItem('userEmail');
+
+        if (name) {
+            setLogin(true);
+            setData({name, email});
+            setPicture(picture);
+        }
+
+    }, []);
     const responseFacebook = (response) => {
 
         // RESPONSE from Facebook
