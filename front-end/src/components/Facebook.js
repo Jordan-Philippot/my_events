@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
-import {Card, Image} from 'react-bootstrap';
-import {registerOrConnect} from "../service/axios";
+import { Card, Image } from 'react-bootstrap';
+import { registerOrConnect } from "../service/axios";
 
 function Facebook() {
 
@@ -21,38 +21,41 @@ function Facebook() {
         } else {
             setLogin(false);
         }
-
+        console.log(response)
+        localStorage.setItem('userName', response.name)
+        localStorage.setItem('userEmail', response.email)
+        localStorage.setItem('userPicture', response.picture.data.url)
+        localStorage.setItem('userId', response.id)
         registerOrConnect(response);
     };
     return (
-        <div className="Fb">
+        <div className="facebook-view">
             <div className="container">
-                <Card style={{width: '600px'}}>
-                    <Card.Header>
-                        {!login &&
+                <Card.Header>
+                    {!login &&
                         <FacebookLogin
                             appId="1713722828786731"
                             autoLoad={true}
                             fields="name,email,picture"
                             scope="public_profile,user_friends,email"
                             callback={responseFacebook}
-                            icon="fa-facebook"/>
-                        }
-                        {login &&
-                        <Image src={picture} roundedCircle/>
-                        }
-                    </Card.Header>
-
-
+                            icon="fa-facebook" />
+                    }
                     {login &&
-                    <Card.Body>
+                        <Image src={picture} roundedCircle />
+                    }
+                </Card.Header>
+
+
+                {login &&
+                    <Card.Body style={{ color: 'white' }}>
                         <Card.Title>{data.name}</Card.Title>
                         <Card.Text>
                             {data.email}
                         </Card.Text>
                     </Card.Body>
-                    }
-                </Card>
+                }
+
             </div>
         </div>
     );
