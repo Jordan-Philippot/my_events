@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { getCategories, getSearch } from './../service/axios';
 export default function Profil() {
     const [name, setName] = useState('')
     const [picture, setPicture] = useState([])

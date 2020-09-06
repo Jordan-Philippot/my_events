@@ -18,15 +18,15 @@ export default function Menu() {
     // useEffect(() => {
     //     setSelect(select)
     // }, [select]);
-const handleSelect = (e) => {
+    const handleSelect = (e) => {
         setSelect(e.target.value);
-    // console.log(select,"select 11",e.target.value );
-};
+        // console.log(select,"select 11",e.target.value );
+    };
 
     const handleSearch = (e) => {
         e.preventDefault();
         console.log(place, "select");
-        getSearch(setSearch, place , select)
+        getSearch(setSearch, place, select)
     };
     console.log(search)
     return (
