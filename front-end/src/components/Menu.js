@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
 import { getCategories, getSearch } from './../service/axios';
-import Event from './Event';
 
 export default function Menu() {
     const [categories, setCategories] = useState([]);
@@ -24,7 +22,6 @@ export default function Menu() {
     const handleSearch = (e) => {
         e.preventDefault();
         getSearch(setSearch, place, select)
-        // return history.push('/')
     };
     console.log(search)
     return (
@@ -40,11 +37,8 @@ export default function Menu() {
             </div>
 
             <input type="text" placeholder="Lieu" value={place} onChange={(e) => setPlace(e.target.value)} />
-           <button onClick={handleSearch}>
-               Filtrer</button>
-            {/* {search && search.map(searc => (
-                <Event key={searc.id} searc={searc} />
-            ))} */}
+
+            <button onClick={handleSearch}> Filtrer</button>
         </div>
     )
 }

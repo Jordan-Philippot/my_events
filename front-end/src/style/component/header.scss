@@ -43,4 +43,32 @@
             }
         }
     }
+    .facebook-view {
+        position: absolute;
+        top: 3%;
+        right: 7%;
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+    .profil-link{
+        text-decoration: none;
+        position: relative;
+        left: 50%;
+        color: $smokywhite;
+        font-family: 'Lemonada', cursive ;
+        &:hover{
+            color: $grey;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .header-view {
+        .facebook-view {
+            position: absolute;
+            top: 14%;
+            right: 7%;
+        }
+    }
 }

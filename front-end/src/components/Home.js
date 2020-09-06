@@ -9,7 +9,7 @@ export default function Home() {
         getEvents(setEvents)
     }, []);
 
-    // console.log(events)
+    console.log(events)
     return (
         <div className="home-view">
             <Menu />

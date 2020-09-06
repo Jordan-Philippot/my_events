@@ -1,0 +1,27 @@
+.profil-view {
+    margin-top: 25vh;
+    .profil-container {
+        text-align: center;
+        .header-profil {
+            width: 100%;
+            background-color: $darkengrey;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 30px;
+            img {
+                border-radius: 50%;
+            }
+        }
+        .body-profil {
+            color: $darkengrey;
+            background-color: $smokywhite;
+            padding: 50px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            .email-profil {
+                font-size: 30px;
+                font-family: 'Lemonada', cursive;
+            }
+        }
+    }
+}

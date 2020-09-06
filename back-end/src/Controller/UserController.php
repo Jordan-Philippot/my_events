@@ -9,8 +9,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 
-class UserController extends AbstractController {
+class UserController extends AbstractController
+{
 
 
     /**
@@ -18,9 +20,11 @@ class UserController extends AbstractController {
      * @param Request $request
      * @return Response
      */
-    public function registerOrConnect(Request $request) {
+    public function registerOrConnect(Request $request)
+    {
+
+
         $postData = json_decode($request->getContent(), true);
-//        die();
 
         $repository = $this->getDoctrine()->getRepository(User::class);
 
@@ -33,14 +37,12 @@ class UserController extends AbstractController {
             $user->setName($postData["name"]);
             $user->setEmail($postData["email"]);
             $user->setImage($postData["picture"]["data"]["url"]);
+            $user->setDescription($postData["description"]);
             $user->setFacebookId($postData["userID"]);
 
             $entityManager->persist($user);
-//            $response = new Response(json_encode(var_dump($user)));
-//            $response->headers->set('Content-Type', 'application/json');
-//            return $response;
-            $entityManager->flush();
 
+            $entityManager->flush();
         }
 
 
