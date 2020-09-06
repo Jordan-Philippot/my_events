@@ -23,9 +23,10 @@ class SearchController extends AbstractController
      */
     public function index($location, $category)
     {
-        $response = $this->client->request(
+        $location = $location != "null" ?  '&location=' . $location : "";
+            $response = $this->client->request(
             'GET',
-            $this->apiUrl . '/events/search?app_key=' . $_ENV['API_KEY'] . '&location=' . $location . '&category=' . $category
+            $this->apiUrl . '/events/search?app_key=' . $_ENV['API_KEY'] . $location . '&category=' . $category
         );
 
         $statusCode = $response->getStatusCode();
