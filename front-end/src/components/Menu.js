@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getCategories, getSearch } from './../service/axios';
 
-export default function Menu() {
+export default function Menu(props) {
     const [categories, setCategories] = useState([]);
     const [search, setSearch] = useState([]);
     const [select, setSelect] = useState('');
@@ -26,7 +26,7 @@ export default function Menu() {
     const handleSearch = (e) => {
         e.preventDefault();
         console.log(place, "select");
-        getSearch(setSearch, place, select)
+        getSearch(props.newEvents, place, select)
     };
     console.log(search)
     return (

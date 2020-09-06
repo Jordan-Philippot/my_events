@@ -19,14 +19,17 @@ export async function getOneEvent(setOneEvent, id) {
 }
 
 
-export async function getSearch(setSearch, place = "null", select) {
+export async function getSearch(newEvents, place = "null", select) {
     const location = place || "null";
     console.log(location, select);
     const search = await axios.get('/search/' + location + '/' + select, {
         method: 'GET',
         mode: 'no-cors'
     })
-    setSearch(search)
+    // console.log(search)
+    // console.log(search.data.events.event)
+
+    newEvents(search.data.events.event)
 }
 
 export function registerOrConnect(response) {

@@ -8,11 +8,14 @@ export default function Home() {
     useEffect(() => {
         getEvents(setEvents)
     }, []);
+    const newEvents = (newEvents) => {
+        setEvents(newEvents);
+    }
 
     console.log(events)
     return (
         <div className="home-view">
-            <Menu />
+            <Menu newEvents={newEvents}/>
             <h2>Évènements à venir</h2>
             <div className="all-events">
                 {events && events.map(event => (
